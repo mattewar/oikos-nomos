@@ -2,7 +2,6 @@ import './App.css';
 import {
   BrowserRouter,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
