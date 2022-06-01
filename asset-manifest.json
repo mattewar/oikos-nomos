@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/oikos-nomos/static/css/main.05d4b0b1.css",
-    "main.js": "/oikos-nomos/static/js/main.2cbce56a.js",
+    "main.js": "/oikos-nomos/static/js/main.18428ed4.js",
     "static/js/787.97493380.chunk.js": "/oikos-nomos/static/js/787.97493380.chunk.js",
     "static/media/troia_bb.webp": "/oikos-nomos/static/media/troia_bb.c5031b75353ec431fca2.webp",
     "index.html": "/oikos-nomos/index.html",
     "main.05d4b0b1.css.map": "/oikos-nomos/static/css/main.05d4b0b1.css.map",
-    "main.2cbce56a.js.map": "/oikos-nomos/static/js/main.2cbce56a.js.map",
+    "main.18428ed4.js.map": "/oikos-nomos/static/js/main.18428ed4.js.map",
     "787.97493380.chunk.js.map": "/oikos-nomos/static/js/787.97493380.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05d4b0b1.css",
-    "static/js/main.2cbce56a.js"
+    "static/js/main.18428ed4.js"
   ]
 }
