@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <title>Oikos Nomos</title>
     <App />
   </React.StrictMode>
 );
