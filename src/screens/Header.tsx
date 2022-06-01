@@ -1,8 +1,11 @@
+import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 function Header() {
-
+    useEffect(() => {
+        document.title = "Oikos Nomos"
+     }, []);
     return (
         <div style={{ color: "white", backgroundColor: "gray" }}>
         <Container>
