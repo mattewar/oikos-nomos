@@ -11,7 +11,7 @@ import Header from './screens/Header';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Header></Header>
       <Routes>
         <Route path="/realm" element={<Realm />} />
