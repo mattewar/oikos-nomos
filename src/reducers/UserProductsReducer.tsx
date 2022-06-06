@@ -1,25 +1,34 @@
 import { OikosMarketAction, OikosUserContextModel } from "../models/MarketModels";
+import { saveUser } from '../interface/ApiInterface'
 
 export const userProductReducer = (state: OikosUserContextModel, action: OikosMarketAction) => {
+    let index = state.products.findIndex(a => a.product.id === action.product.id)
+    let products = state.products;
     switch (action.type) {
         case 'BUY':
             state.balance -= action.totalValue;
-            if (state.products.find(a => a.product.id === action.product.id) === undefined) {
+            if (index === -1) {
                 state.products.push({ quantity: 0, product: action.product });
+                index = state.products.findIndex(a => a.product.id === action.product.id)
             }
-            state.products.find(a => a.product.id === action.product.id)!.quantity += action.quantity
-            console.log(1,state)
-            return Object.create(state);
+            products[index].quantity += action.quantity
+            state.products = products
+            break;
         case 'SELL':
             state.balance += action.totalValue;
-            if (state.products.find(a => a.product.id === action.product.id) === undefined) {
+            if (index === -1) {
                 state.products.push({ quantity: 0, product: action.product });
+                index = state.products.findIndex(a => a.product.id === action.product.id)
             }
-            state.products.find(a => a.product.id === action.product.id)!.quantity -= action.quantity
-            return Object.create(state);
+            products[index].quantity -= action.quantity
+            state.products = products
+            break;
         default:
-            return state;
+            break;
     }
+    state.name = state.name.valueOf()
+    saveUser(state)
+    return Object.create(state);
 }
 
 export enum Types {

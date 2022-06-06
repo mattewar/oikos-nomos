@@ -1,10 +1,9 @@
 import React, { createContext, useReducer } from 'react';
 import { OikosUserContextModel } from '../models/MarketModels';
 import { userProductReducer } from '../reducers/UserProductsReducer';
+import { getUser } from '../interface/ApiInterface';
 
-
-
-const initialState : OikosUserContextModel = {
+let initialState : OikosUserContextModel = {
   products: [],
   name: "mattewar",
   balance: 100,
@@ -19,6 +18,10 @@ const UserContext = createContext<{
   });
   
   const UserProvider = (props : any) => {
+    const userData = getUser()
+    if(userData !== undefined)
+      initialState = userData
+
     const [state, dispatch] = useReducer(userProductReducer, initialState);
   
     return (
