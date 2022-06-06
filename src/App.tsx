@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Routes
 } from "react-router-dom";
@@ -20,13 +20,13 @@ function App() {
   
   return (
     <UserProvider value={initialState}>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter >
         <Header></Header>
         <Routes>
           <Route path="/realm" element={<Realm />} />
           <Route path="/" element={<Home />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </UserProvider>
   );
 }
